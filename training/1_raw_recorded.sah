@@ -1,0 +1,18 @@
+_navigateTo("http://sahitest.com/demo/training");
+var $t= _testcase("TC_1", "Login TestCase");
+$t.start();
+_setValue(_textbox("user"), "test");
+_setValue(_password("password"), "secret");
+_click(_submit("Login"));
+$t.end();
+var $t2= _testcase("TC_2","Adding books and verify total");
+$t2.start();
+_setValue(_textbox("q"), "2");
+_setValue(_textbox("q[1]"), "1");
+_setValue(_textbox("q[2]"), "1");
+_click(_button("Add"));
+_assertExists(_textbox("total"));
+_assert(_isVisible(_textbox("total")));
+_assertEqual("1150", _textbox("total").value);
+$t2.end();
+_click(_button("Logout"));
