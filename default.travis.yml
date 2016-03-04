@@ -1,1 +1,1 @@
-ant -f testBuild.xml
+ant -f testMeBuild.xml
